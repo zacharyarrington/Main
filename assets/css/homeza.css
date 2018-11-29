@@ -1,0 +1,193 @@
+/*Home page css settings*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    height: 100%;
+    width: auto;
+}
+#page {
+    display: grid;
+    grid: 30em auto 3em / auto;
+    grid-template-areas: 'sidebar''content''foot';
+}
+#profile {
+    grid-area: profile;
+    display: grid;
+    grid-template-areas: 'title' 'pro-pic';
+}
+#profile h2 {
+    grid-area: title;
+    justify-self: center;
+    align-self: center;
+    margin: auto;
+}
+#profile span:nth-child(1) {
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+#profile a {
+    grid-area: pro-pic;
+    justify-self: center;
+    align-self: center;
+}
+#profile img {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+#info {
+    grid-area: info;
+    display: grid;
+}
+#info p {
+    font-size: 15pt;
+    margin: .25em 1em;
+    text-align: center;
+    /* background-color: rgba(200, 200, 200, 0.5); */
+    border-radius: 5pt;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+#fillgap {
+    grid-area: fillgap;
+}
+#sidebar-all {
+    background-image: url(../img/Map_3.png);
+    grid-area: sidebar;
+    background-color: #3f69aa;
+    background-position: left center;
+    display: grid;
+    grid: 16em 8em auto 10em / auto;
+    grid-template-areas: 'profile''info''fillgap''links';
+}
+#links {
+    text-align: center;
+    justify-content: space-evenly;
+    grid-area: links;
+    display: grid;
+    grid: 2em 2em / 8em 8em;
+    grid-template-areas: 'Github About''Projects Resume';
+}
+#links a:nth-child(1) {
+    grid-area: Github;
+}
+#links a:nth-child(2) {
+    grid-area: About;
+}
+#links a:nth-child(3) {
+    grid-area: Projects;
+}
+#links a:nth-child(4) {
+    grid-area: Resume;
+}
+#links a {
+    text-decoration: none;
+    color: white;
+    font-size: 14pt;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+#links a:hover {
+    text-decoration: underline;
+    color: white;
+    font-size: 15pt;
+}
+#page-content {
+    color: black;
+    grid-area: content;
+    display: grid;
+    grid-auto-rows: repeat(5, 1fr);
+}
+.page-content-item {
+    justify-self: center;
+    align-self: center;
+    padding: 1em;
+}
+#demo_pic {
+    max-width: 100%;
+}
+#footer {
+    background-color: #3F69AA;
+    text-align: center;
+    grid-area: foot;
+    bottom: 0;
+    width: 100%;
+}
+@media (min-width: 768px) {
+    #page {
+        height: 100%;
+        grid: auto 3em / 20em auto;
+        grid-template-areas: 'sidebar content''foot content';
+    }
+    #page-content {
+        overflow-y: scroll;
+    }
+    #links {
+        /*        padding-bottom: 6em;*/
+        grid: initial;
+        grid-template-areas: 'Github''About''Projects''Resume';
+        justify-content: center;
+    }
+}
+
+/*@media (min-height: 723px) {
+    #sidebar-all {
+        grid: 18em auto 15em / auto;
+    }
+}*/
+
+.blinking-cursor {
+    font-weight: 100;
+    font-size: 30px;
+    color: #2E3D48;
+    -webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    -o-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+}
+@keyframes "blink" {
+    from,
+    to {
+        color: transparent;
+    }
+    50% {
+        color: white;
+    }
+}
+@-moz-keyframes blink {
+    from,
+    to {
+        color: transparent;
+    }
+    50% {
+        color: white;
+    }
+}
+@-webkit-keyframes "blink" {
+    from,
+    to {
+        color: transparent;
+    }
+    50% {
+        color: white;
+    }
+}
+@-ms-keyframes "blink" {
+    from,
+    to {
+        color: transparent;
+    }
+    50% {
+        color: white;
+    }
+}
+@-o-keyframes "blink" {
+    from,
+    to {
+        color: transparent;
+    }
+    50% {
+        color: white;
+    }
+}
